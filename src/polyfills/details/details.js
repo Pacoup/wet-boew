@@ -56,13 +56,11 @@ var componentName = "wb-details",
 	open = function() {
 		this.setAttribute( "open", "open" );
 		this.className += " open";
-		saveState.call( this );
 	},
 
 	close = function() {
 		this.removeAttribute( "open" );
 		this.className = this.className.replace( " open", "" );
-		saveState.call( this );
 	},
 
 	setOpen = function( isOpen ) {
@@ -75,21 +73,6 @@ var componentName = "wb-details",
 		}
 		this.summary.setAttribute( "aria-expanded", isOpen );
 		$( this ).trigger( "toggle" );
-	},
-
-	//TODO: Move to the alerts plugin
-	saveState = function() {
-		var key;
-
-		if ( this.className.indexOf( "alert" ) !== -1 ) {
-			key = "alert-collapsible-state-" + this.getAttribute( "id" );
-		}
-
-		if ( key ) {
-			try {
-				localStorage.setItem( key, this.open ? "open" : "closed" );
-			} catch ( e ) {}
-		}
 	};
 
 // Bind the init event of the plugin
