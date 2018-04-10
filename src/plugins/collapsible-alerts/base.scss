@@ -45,8 +45,9 @@ details {
 				margin-left: .2em;
 
 				&:before {
-					color: #000;
-					content: "";
+					font-size: 24px;
+					margin-left: -1.7em;
+					margin-top: -4px;
 				}
 			}
 		}
@@ -54,74 +55,129 @@ details {
 		&.alert-success {
 			@extend %label-alert-success-bg-border-left;
 
-			&:before {
-				color: $label-alert-success-border-icon-color;
-				content: "\e084";
+			> {
+				:first-child {
+					&:before {
+						color: $label-alert-success-border-icon-color;
+						content: "\e084";
+					}
+				}
 			}
 		}
 
 		&.alert-info {
 			@extend %label-alert-info-bg-border-left;
 
-			&:before {
-				color: $label-alert-info-border-icon-color;
-				content: "\e086";
+			> {
+				:first-child {
+					&:before {
+						color: $label-alert-info-border-icon-color;
+						content: "\e086";
+					}
+				}
 			}
 		}
 
 		&.alert-warning {
 			@extend %label-alert-warning-bg-border-left;
 
-			&:before {
-				color: $label-alert-warning-border-icon-color;
-				content: "\e107";
+			> {
+				:first-child {
+					&:before {
+						color: $label-alert-warning-border-icon-color;
+						content: "\e107";
+					}
+				}
 			}
 		}
 
 		&.alert-danger {
 			@extend %label-alert-danger-bg-border-left;
 
-			&:before {
-				color: $label-alert-danger-border-icon-color;
-				content: "\e101";
+			> {
+				:first-child {
+					&:before {
+						color: $label-alert-danger-border-icon-color;
+						content: "\e101";
+					}
+				}
 			}
 		}
 	}
 }
 
-.wb-enable {
-	&.no-details {
-		details {
-			&.alert {
-				> {
-					summary {
-						margin-left: 1.2em;
-
-						&:before {
-							content: "\25BA\a0";
-						}
-					}
+.no-details {
+	details {
+		&.alert,
+		&.alert[open] {
+			> {
+				:first-child {
+					margin-left: 1.5em;
 				}
 
-				&[open] {
-					> {
-						summary {
-							&:before {
-								content: "\25BC\a0";
-							}
-						}
+				summary {
+					list-style-type: none;
+				}
+			}
+
+			&.alert-success {
+				&:before {
+					color: $label-alert-success-border-icon-color;
+					content: "\e084";
+				}
+			}
+			&.alert-info {
+				&:before {
+					color: $label-alert-info-border-icon-color;
+					content: "\e086";
+				}
+			}
+			&.alert-warning {
+				&:before {
+					color: $label-alert-warning-border-icon-color;
+					content: "\e107";
+				}
+			}
+			&.alert-danger {
+				&:before {
+					color: $label-alert-danger-border-icon-color;
+					content: "\e101";
+				}
+			}
+		}
+
+		&.alert {
+			> {
+				:first-child {
+					&:before {
+						color: black;
+						content: "\25BA\a0";
 					}
 				}
 			}
 		}
 
-		&[dir="rtl"] {
-			details {
-				&.alert {
-					> {
-						summary {
-							margin-right: 1.2em;
-						}
+		&.alert[open] {
+			> {
+				:first-child {
+					&:before {
+						color: black;
+						content: "\25BC\a0";
+					}
+				}
+			}
+		}
+	}
+}
+
+.firefox {
+	details {
+		&.alert,
+		&.alert[open] {
+			> {
+				:first-child {
+					&:before {
+						margin-left: -2.9em;
 					}
 				}
 			}

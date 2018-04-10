@@ -16,7 +16,8 @@ var componentName = "wb-collapsible",
 	selector = "details.alert",
 	initEvent = "wb-init." + componentName,
 	$document = wb.doc,
-	key,
+	key, reducedUserAgent,
+	firefoxVersion, htmlRoot,
 
 	/**
 	 * @method init
@@ -58,6 +59,18 @@ var componentName = "wb-collapsible",
 
 				}
 			} catch ( e ) {}
+
+			// Add class to html element for details/summary workaround CSS for Firefox
+			reducedUserAgent = navigator.userAgent.match( "Firefox\/\\d+" );
+
+			if ( reducedUserAgent !== null ) {
+				firefoxVersion = Number( reducedUserAgent[ 0 ].match( "\\d+" )[ 0 ] );
+
+				if ( firefoxVersion >= 49 ) {
+					htmlRoot = document.getElementsByTagName( "html" )[ 0 ];
+					htmlRoot.classList.add( "firefox" );
+				}
+			}
 
 			// Identify that initialization has completed
 			wb.ready( $details, componentName );

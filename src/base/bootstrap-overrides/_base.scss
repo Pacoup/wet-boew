@@ -329,15 +329,6 @@ $label-alert-success-border-icon-color: #278400;
 .alert-success {
 	@extend %label-alert-success-bg-border-left;
 	@extend %label-alert-color-000;
-
-	> {
-		:first-child {
-			&:before {
-				color: $label-alert-success-border-icon-color;
-				content: "\e084";
-			}
-		}
-	}
 }
 
 $label-alert-info-border-icon-color: #269abc;
@@ -365,15 +356,6 @@ $label-alert-info-border-icon-color: #269abc;
 .alert-info {
 	@extend %label-alert-info-bg-border-left;
 	@extend %label-alert-color-000;
-
-	> {
-		:first-child {
-			&:before {
-				color: $label-alert-info-border-icon-color;
-				content: "\e086";
-			}
-		}
-	}
 }
 
 $label-alert-warning-border-icon-color: #f90;
@@ -401,15 +383,6 @@ $label-alert-warning-border-icon-color: #f90;
 .alert-warning {
 	@extend %label-alert-warning-bg-border-left;
 	@extend %label-alert-color-000;
-
-	> {
-		:first-child {
-			&:before {
-				color: $label-alert-warning-border-icon-color;
-				content: "\e107";
-			}
-		}
-	}
 }
 
 $label-alert-danger-border-icon-color: #d3080c;
@@ -437,15 +410,6 @@ $label-alert-danger-border-icon-color: #d3080c;
 .alert-danger {
 	@extend %label-alert-danger-bg-border-left;
 	@extend %label-alert-color-000;
-
-	> {
-		:first-child {
-			&:before {
-				color: $label-alert-danger-border-icon-color;
-				content: "\e101";
-			}
-		}
-	}
 }
 
 /*
